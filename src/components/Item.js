@@ -1,14 +1,15 @@
-import React from "react";
+function Item({ item, onUpdateItem }) {
+  function handleDeleteClick() {
+    console.log(item);
+  }
 
-function Item({ item }) {
   return (
     <li className={item.isInCart ? "in-cart" : ""}>
       <span>{item.name}</span>
       <span className="category">{item.category}</span>
-      <button className={item.isInCart ? "remove" : "add"}>
-        {item.isInCart ? "Remove From" : "Add to"} Cart
+      <button className="remove" onClick={handleDeleteClick}>
+        Delete
       </button>
-      <button className="remove">Delete</button>
     </li>
   );
 }
